@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slider Example</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Choco Cooky", cursive;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .slider-value {
+            margin-left: 10px;
+        }
+
+        .title {
+            text-align: center;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Choco+Cooky&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="title">Trident</h1>
+    <form method="POST" action="/">
+        <div class="boolean-container">
+            <h2>Features</h2>
+            <label for="bhop">Bhop:</label>
+            <input type="checkbox" name="bhop" id="bhop" {% if bhop %}checked{% endif %} value="on">
+            <br>
+            <label for="rcs">RCS:</label>
+            <input type="checkbox" name="rcs" id="rcs" {% if rcs %}checked{% endif %} value="on">
+            <br>
+            <label for="rcs_aim">RCS Aim:</label>
+            <input type="checkbox" name="rcs_aim" id="rcs_aim" {% if rcs_aim %}checked{% endif %} value="on">
+            <br>
+            <label for="triggerbot">Triggerbot:</label>
+            <input type="checkbox" name="triggerbot" id="triggerbot" {% if triggerbot %}checked{% endif %} value="on">
+            <br>
+            <label for="minecraft">Minecraft:</label>
+            <input type="checkbox" name="minecraft" id="minecraft" {% if minecraft %}checked{% endif %} value="on">
+            <br>
+            <label for="aimbot">Aimbot:</label>
+            <input type="checkbox" name="aimbot" id="aimbot" {% if aimbot %}checked{% endif %} value="on">
+            <br>
+            <label for="fortnite">Fortnite:</label>
+            <input type="checkbox" name="fortnite" id="fortnite" {% if fortnite %}checked{% endif %} value="on">
+        </div>
+        <br>
+        <div class="slider-container">
+            <label for="hitbox">HITBOX:</label>
+            <input type="range" min="0.15" max="0.25" step="0.01" name="hitbox" id="hitbox" value="{{ hitbox }}">
+            <span class="slider-value" id="hitboxValue">{{ hitbox }}</span>
+        </div>
+        <br>
+        <br>
+        <div class="slider-container">
+            <label for="fov">FOV:</label>
+            <input type="range" min="0.25" max="0.50" step="0.01" name="fov" id="fov" value="{{ fov }}">
+            <span class="slider-value" id="fovValue">{{ fov }}</span>
+        </div>
+        <br>
+
+        <div class="text-container">
+            <h2>Screen Resolution</h2>
+            <label for="screen_height">Screen Height:</label>
+            <input type="number" name="screen_height" id="screen_height" min="0" max="6000" value="{{ screen_height }}">
+            <br>
+            <label for="screen_width">Screen Width:</label>
+            <input type="number" name="screen_width" id="screen_width" min="0" max="6000" value="{{ screen_width }}">
+        </div>
+        <br>
+
+        <div class="text-container">
+            <h2>Color</h2>
+            <label for="color">Color:</label>
+            <select name="color" id="color">
+                <option value="purple" {% if color == 'purple' %}selected{% endif %}>Purple</option>
+                <option value="yellow" {% if color == 'yellow' %}selected{% endif %}>Yellow</option>
+            </select>
+        </div>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+
+    <script>
+        // Get the HITBOX slider input element and value span element
+        var hitboxSlider = document.getElementById('hitbox');
+        var hitboxValue = document.getElementById('hitboxValue');
+
+        // Update the HITBOX value span element when the slider value changes
+        hitboxSlider.addEventListener('input', function () {
+            hitboxValue.textContent = hitboxSlider.value;
+        });
+        var fovSlider = document.getElementById('fov');
+        var fovValue = document.getElementById('fovValue');
+
+        // Update the fov value span element when the slider value changes
+        fovSlider.addEventListener('input', function () {
+            fovValue.textContent = fovSlider.value;
+        });
+    </script>
+</body>
+</html>

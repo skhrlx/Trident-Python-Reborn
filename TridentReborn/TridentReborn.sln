@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33801.447
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TridentReborn", "TridentReborn\TridentReborn.pyproj", "{ADD0DD2E-8FC4-4119-9F2E-CFC6C08E952B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADD0DD2E-8FC4-4119-9F2E-CFC6C08E952B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD0DD2E-8FC4-4119-9F2E-CFC6C08E952B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1864E495-10BD-4FD7-A639-6AEC59DB7B75}
+	EndGlobalSection
+EndGlobal

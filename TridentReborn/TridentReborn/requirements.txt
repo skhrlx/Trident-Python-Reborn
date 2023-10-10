@@ -1,0 +1,10 @@
+configparser
+opencv-python
+numpy
+pywin32
+pyserial
+dxcam
+regex
+pycryptodome
+nuitka
+requests
