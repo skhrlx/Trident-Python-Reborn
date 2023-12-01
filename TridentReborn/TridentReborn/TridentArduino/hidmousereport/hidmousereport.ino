@@ -20,7 +20,7 @@ void loop() {
     int cmd = Serial.read();
     switch (cmd) {
       case CMD_JUMP: {
-        Mouse.move(0, 0, +1000);
+        Mouse.move(0, 0, +1);
       }
       break;
       case CMD_MDOWN: {
@@ -60,26 +60,11 @@ void loop() {
 
 void onButtonDown(uint16_t buttonId) {
   Mouse.press(buttonId);
-  switch (buttonId) {
-    case MOUSE_BUTTON4:
-      Keyboard.press('p');
-      break;
-    case MOUSE_BUTTON5:
-      Keyboard.press('l');
-      break;
-  }
 }
+
 
 void onButtonUp(uint16_t buttonId) {
   Mouse.release(buttonId);
-  switch (buttonId) {
-    case MOUSE_BUTTON4:
-      Keyboard.release('p');
-      break;
-    case MOUSE_BUTTON5:
-      Keyboard.release('l');
-      break;
-  }
 }
 
 void onTiltPress(int8_t tiltValue) {
@@ -88,5 +73,5 @@ void onTiltPress(int8_t tiltValue) {
 }
 
 void onMouseMove(int8_t xMovement, int8_t yMovement, int8_t scrollValue) {
-  Mouse.move(xMovement, yMovement, scrollValue * 10);
+  Mouse.move(xMovement, yMovement, scrollValue);
 }
